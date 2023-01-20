@@ -1,4 +1,5 @@
-name: 🚀 Publish Website to CPanel
+name: Publish Website to CPanel
+
 on:
   workflow_dispatch:
   
