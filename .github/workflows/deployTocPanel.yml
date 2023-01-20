@@ -1,14 +1,9 @@
 name: Publish Website to CPanel
 
 on:
-  workflow_dispatch:
-  
-  repository_dispatch:
-    type:
-      - webhook
   push:
     branches:
-      - main
+      - master
 jobs:
   FTP-Deploy-Action:
     name: 🎉 Deploy
