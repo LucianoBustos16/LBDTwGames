@@ -1,5 +1,6 @@
 {
-  "name": "@example/basics",
+  "name": "luchito",
+  "homepage": "https://lbdtwplus.com.ar/",
   "type": "module",
   "version": "0.0.1",
   "private": true,
