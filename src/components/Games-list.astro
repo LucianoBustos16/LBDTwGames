@@ -1,0 +1,38 @@
+---
+const response = await fetch("https://www.gamerpower.com/api/giveaways");
+const games = await response.json();
+---
+
+{
+	games.map(({ id, thumbnail, title, platforms }) => (
+		<div class="flex justify-between items-center overflow-hidden rounded-2xl shadow-md gap-3 p-2 bg-slate-700 my-2">
+			<img
+				class="overflow-hidden rounded-xl w-36"
+				src={thumbnail}
+				alt={title}
+			/>
+
+			<div class="flex items-center gap-2 w-full">
+				<h2 class="text-base font-semibold">{title}</h2>
+				<span class="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400">
+					{platforms}
+				</span>
+			</div>
+
+			<a
+				href={`/game/${id}`}
+				class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+			>
+				Descargar
+			</a>
+			<a
+				href={`/game/${id}`}
+				class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800"
+			>
+				Ver más
+			</a>
+
+		</div>
+	))
+}
+

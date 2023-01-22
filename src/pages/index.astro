@@ -1,37 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-
-const response = await fetch ('https://www.gamerpower.com/api/giveaways')
-const data = await response.json()
+import GamesList from '../components/Games-list.astro';
+import Container from '../components/Container.astro';
+import GamesFilter from '../components/Games-filter.astro';
 ---
 
-<Layout title="LBDTw Games">
-
+<Layout>
 	
-	<main class="text-center">
-		<h1>Bienvenido a LBDTw<span class=" text-cyan-400">+</span></h1>	
+	<main>
+		<Container>
+			<h1 class="text-center">Bienvenido a LBDTw<span class=" text-cyan-400">+</span></h1>	
 
-		<ul role="list" class="link-card-grid">
+			<GamesFilter></GamesFilter>
 
-			{data.map(({id, thumbnail, title, description }) => (
+			<GamesList/>
+		</Container>
 
-			<Card
-				image={thumbnail}
-				href={`/game/${id}`}
-				title={title}
-				body={description}
-			/>
 
-			)
-			)}	
 
-		</ul>
 
 	</main>
 </Layout>
 
-<style>
+<!-- <style>
 	main {
 		margin: auto;
 		padding: 1.5rem;
@@ -41,13 +32,7 @@ const data = await response.json()
 		font-weight: 800;
 		margin: 0;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
+
 	.instructions {
 		line-height: 1.6;
 		margin: 1rem 0;
@@ -69,8 +54,8 @@ const data = await response.json()
 	}
 	.link-card-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
+		/* grid-template-columns: repeat(3, 1fr); */
+		/* gap: 1rem; */
 		padding: 0;
 	}
-</style>
+</style> -->

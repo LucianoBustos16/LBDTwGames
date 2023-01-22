@@ -4,12 +4,26 @@ export interface Props {
 	body: string;
 	href: string;
 	image: string;
+	platforms: string;
 }
 
-const { href, title, body, image } = Astro.props;
+const { href, title, body, image, platforms, } = Astro.props;
 ---
 
-<li class="flex dark:bg-slate-800 rounded-lg shadow overflow-hidden">
+<div class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <a href={href} class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg">
+		<img class="" src={image} alt={title}>
+	</a>
+
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{body}</p>
+		<span class="bg-indigo-100 text-indigo-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-indigo-400 border border-indigo-400">{platforms}</span>
+		<a href={href} class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Ver más</a>
+    </div>
+</div>
+
+<!-- <li class="flex dark:bg-slate-800 rounded-lg shadow overflow-hidden">
 	<a href={href}>
 		<img src={image} alt={title} class=" w-full">
 		<div class=" p-2">
@@ -22,7 +36,11 @@ const { href, title, body, image } = Astro.props;
 
 		</div>
 	</a>
-</li>
+</li> -->
+
+
+
+
 <!-- <style>
 	
 
