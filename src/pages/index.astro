@@ -3,15 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import GamesList from '../components/Games-list.astro';
 import Container from '../components/Container.astro';
 import GamesFilter from '../components/Games-filter.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <Layout>
 	
 	<main>
 		<Container>
-			<h1 class="text-center">Bienvenido a LBDTw<span class=" text-cyan-400">+</span></h1>	
 
-			<GamesFilter></GamesFilter>
+		<Hero></Hero>
+
+			<!-- <GamesFilter></GamesFilter> -->
 
 			<GamesList/>
 		</Container>
